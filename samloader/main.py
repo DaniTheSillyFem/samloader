@@ -127,7 +127,7 @@ def download(args):
 def imei_parser(args):
     if args.dev_imei:
         if len(args.dev_imei) == 8:
-            for attempt in range(1, 6):  # Try 5 times to generate a valid IMEI
+            for attempt in range(1, 31):  # Try 5 times to generate a valid IMEI
                 result = imei.generate_random_imei(args.dev_imei)
                 client = fusclient.FUSClient()
                 fw_ver = versionfetch.getlatestver(args.dev_model, args.dev_region)
